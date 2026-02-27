@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Tareas</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    }
+
+    h1 {
+        color: black;
+        }
+    
+    input, button {
+        padding: 8px;
+        margin-top: 10px;
+        }
+    
+    button {
+        background-color: #007BFF;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        }
+    
+    button:hover {
+        background-color: #0056b3;
+        }
+    
+    ul {
+        margin-top: 20px;
+        }
+    
+    li {
+        margin: 5px 0;
+        }
+  </style>
+</head>
+<body>
+  <h1>To Do list</h1>
+  
+  <!-- Input para ingresar la tarea -->
+  <input type="text" id="tareaInput" placeholder="Escribe el titulo de la tarea">
+  
+  <!-- Botón para agregar la tarea -->
+  <button onclick="agregarTarea()">Agregar</button>
+  
+  <!-- Lista donde aparecerán las tareas -->
+  <ul id="listaTareas"></ul>
+  
+  <script>
+    function agregarTarea() {
+      const input = document.getElementById("tareaInput");
+      const lista = document.getElementById("listaTareas");
+      const texto = input.value.trim();
+
+      if (texto !== "") {
+        // Crear un nuevo elemento <li> para la tarea
+        const nuevaTarea = document.createElement("li");
+        nuevaTarea.textContent = texto;
+        
+        // Agregarlo a la lista de tareas
+        lista.appendChild(nuevaTarea);
+        
+        // Limpiar el input
+        input.value = "";
+      } else {
+        alert("Por favor escribe una tarea antes de agregar.");
+      }
+    }
+  </script>
+</body>
+</html>
