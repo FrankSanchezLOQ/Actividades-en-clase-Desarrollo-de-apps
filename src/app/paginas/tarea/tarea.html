@@ -1,0 +1,11 @@
+<h1>Formulario de Tareas</h1>
+
+<input type="text" [(ngModel)]="nuevaTarea" placeholder="Titulo de la tarea">
+
+<button (click)="agregarTarea()">Agregar Tarea</button>
+
+<ul>
+  <li *ngFor="let tarea of listaTareas">
+    {{ tarea }}
+  </li>
+</ul>
